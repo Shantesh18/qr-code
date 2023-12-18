@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+
+</head>
+
+<body>
+
+    <center>
+        <label for="input-text">Enter Text: </label>
+        <input type="text" placeholder="Enter text to convert QR" id="input-text" />
+    </center>
+    <br>
+    <center>
+        <button type="button" onclick="createQR()">Generate QR-CODE</button>
+    </center>
+    <hr>
+    <br>
+    <center>
+        <div id="qr-container">
+           
+        </div>
+    </center>
+   
+
+
+
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js">
+    </script>
+
+    <script>
+
+       
+        const createQR = () => {
+
+            var inputText = document.getElementById("input-text").value;
+
+            // QR ode
+            var qrContainer = document.getElementById("qr-container");
+         
+            qrContainer.innerHTML = "";
+
+            var qrcode = new QRCode(qrContainer, {
+                text: inputText,
+                width: 240,
+                height: 240,
+            });
+        }
+
+
+    </script>
+
+</body>
+
+</html>
